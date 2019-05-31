@@ -901,7 +901,14 @@ border-radius: 25px;
   padding: 1px 20px 6px;
   margin: 0;
 }
-
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:transparent;
+  color: white;
+  text-align: center;
+}
 .social-list__inline li {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
