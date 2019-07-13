@@ -2,6 +2,29 @@ function ashprint() {
     window.print();
   }
 
+  $(document).ready(function() {
+    loadRSS('https://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
+  });
+  
+  function loadRSS(link, htmlContainer, author) {
+      var url = link;
+      var container = $(htmlContainer);
+  
+      feednami.load(url, function(result){
+          if (result.error) {
+              console.log(result.error);
+          } else {
+              var entries = result.feed.entries;
+              for(var i = 0; i < 6; i++){
+                  var entry = entries[i];
+                  container.append("<div class=\"row\">"+"<div class=\"col-sm-6\">"+"<div class=\"card\">" 
+                      +"<div class=\"card-body\">"+"<a +class=\"card-title\" href=\"" + entry.link + "\"  target=\"_blank\">" + entry.title+"</h2>" +"</a>" 
+            + "</p>"+ "<p class=\"fine-print\">"+author+"</p>"+ "</div>"+"</div>"
+            +"</div>"+"</div>");
+              }
+          }
+      });
+  }
 
 /* ---- particles.js config ---- */
 
