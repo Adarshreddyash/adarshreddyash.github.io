@@ -23,16 +23,44 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+   <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142753069-1"></script>
 <script type="text/javascript" src="/in.js"></script>
+<script type="text/javascript" src="/gspace.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+	  $(document).ready(function() {
+    loadRSS('https://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
+});
+
+function loadRSS(link, htmlContainer, author) {
+    var url = link;
+    var container = $(htmlContainer);
+
+    feednami.load(url, function(result){
+        if (result.error) {
+            console.log(result.error);
+        } else {
+            var entries = result.feed.entries;
+            for(var i = 0; i < 6; i++){
+                var entry = entries[i];
+                container.append("<div class=\"row\">"+"<div class=\"col-sm-6\">"+"<div class=\"card\">" 
+                    +"<div class=\"card-body\">"+"<a +class=\"card-title\" href=\"" + entry.link + "\"  target=\"_blank\">" + entry.title+"</h2>" +"</a>" 
+					+ "</p>"+ "<p class=\"fine-print\">"+author+"</p>"+ "</div>"+"</div>"
+					+"</div>"+"</div>");
+            }
+        }
+    });
+}
+  </script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-142753069-1');
-</script>       
+</script>
 </head>
 
 <body >    
@@ -93,7 +121,7 @@
      <div class="none">
         
         </div>
- <div class="none" style="margin-top: 100px;">
+ <div class="none" style="margin-top: 120px;">
              <div class="card hovercard con-foot">
                     <div class="avatar">
                             <img src="https://avatars3.githubusercontent.com/u/28985009?s=460&v=4"  alt="lead avatar">
@@ -155,11 +183,20 @@
                                                     </marquee>
                                                     </div>
                                                 </div>
-                                                </div>
                                             </div>
+                                            <h4 class="text-secondary" style="padding-left: 50px">
+                                                My Blog Posts:
+                                                </h4>
+                                            <p style="font-size:8px;padding-left: 50px ">This feed tool feeds from gspace| created by me on feednami.</p>
+                                            <div class="text-center info" style="padding-top: 30px;">
+                                                   <ul id="Newsfeed"></ul>
+                                              </div>
                                         </div>
+                                      </div>
+                                    </div>
+                                    <p style="font-size: 15px;">Made with</p>
              </div>
-              </div>
+             
         </div>
        
 </body>
