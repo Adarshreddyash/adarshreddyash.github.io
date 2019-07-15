@@ -29,28 +29,7 @@
 <script type="text/javascript" src="/in.js"></script>
 <script type="text/javascript" src="/gspace.js"></script>
 <script>
-$(document).ready(function() {
-    loadRSS('https://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
-});
 
-function loadRSS(link, htmlContainer, author) {
-    var url = link;
-    var container = $(htmlContainer);
-
-    feednami.load(url, function(result){
-        if (result.error) {
-            console.log(result.error);
-        } else {
-            var entries = result.feed.entries;
-            for(var i = 0; i < 4; i++){
-                var entry = entries[i];
-                container.append("<li class=\"RSScard\"><p><h2>" 
-                    + "<a href=\"" + entry.link + "\" target=\"_blank\">" + entry.title +"</a>" 
-                    + "</h2></p>"+ author + "</li>");
-            }
-        }
-    });
-}
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
