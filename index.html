@@ -29,35 +29,7 @@
 <script type="text/javascript" src="/in.js"></script>
 <script type="text/javascript" src="/gspace.js"></script>
 <script>
-var url = 'http://glammingspace.blogspot.com/atom.xml'
-var container = document.querySelector('#events');
-var num = 5;
 
-feednami.load(url,function(result){
-  if(result.error){
-    console.log(result.error)
-  }
-  else{
-    var entries = result.feed.entries
-    for(var i = 0; i < num; i++){
-      var entry = entries[i]
-      var li = document.createElement('li');
-      var a = document.createElement('a');
-      var div = document.createElement('div');
-      
-      a.innerHTML = entry.title;
-      a.href = entry.link;
-
-      div.innerHTML = entry.description;
-      
-      
-      li.appendChild(a);
-      li.appendChild(div.firstChild);
-
-      container.appendChild(li);
-    }
-  }
-});
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
@@ -190,7 +162,6 @@ feednami.load(url,function(result){
                                                     </div>
                                                 </div>
                                             </div>
-		     <ul id="events"></ul>
                                             <h4 class="text-secondary" style="padding-left: 50px">
                                                 My Blog Posts:
                                                 </h4>
