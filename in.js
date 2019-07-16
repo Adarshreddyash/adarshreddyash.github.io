@@ -3,7 +3,11 @@ function ashprint() {
   }
 
   $(document).ready(function() {
+<<<<<<< HEAD
     loadRSS('http://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
+=======
+    loadRSS('https://glammingspace.blogspot.com/feeds/posts/default?alt=rss', '#Newsfeed', 'adarshreddy');   
+>>>>>>> fb5b8e16fbb32a57940735b8da00eeb1cf7eb4ad
   });
   
   function loadRSS(link, htmlContainer, author) {
