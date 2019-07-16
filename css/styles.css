@@ -108,6 +108,7 @@ p {
 .particle {
   position: absolute;
   border-radius: 50%;
+  overflow-x:hidden;
 }
 @keyframes particle-animation-1 {
   100% {
