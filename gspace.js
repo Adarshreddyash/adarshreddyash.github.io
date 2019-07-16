@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    loadRSS('https://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
+    loadRSS('http://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
 });
 
 function loadRSS(link, htmlContainer, author) {
