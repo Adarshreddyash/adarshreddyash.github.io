@@ -1778,6 +1778,9 @@ border-radius: 25px;
 .mt-0 {
   margin-top: 0;
 }
+.ml-10{
+  margin-left: 10px;
+}
 
 .mt-10 {
   margin-top: 10px  ;
@@ -2065,21 +2068,21 @@ color: #3498DB;}
 }
 
 .button {
-  color: #FFFFFF;
-  font-size: 15px;
-  border-radius: 20px;
-  border: none;
-  color: white; 
-  padding: 12px 16px; 
-  font-size: 16px; 
   cursor: pointer;
+  background: #2F5BE7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: #FFFFFF;;
+  padding: 12px 18px;
+  font-size: 14px;
+  border-radius: 2px;
+  padding-left: 5px;
   
 
 }
 
 .button:hover, .hero-button:hover, .event-btn:hover {
   background-image: linear-gradient( 102.2deg,  rgba(251,166,60,1) 1.2%, rgba(213,57,44,1) 107.5% );
-  color: #0080ff;
+  color: #f3f3f3;
   text-decoration: none;
   box-shadow: 0 3px 6px rgba(0, 110, 255, 0.4);
 }
@@ -2091,6 +2094,7 @@ color: #3498DB;}
   padding: 12px 18px;
   font-size: 14px;
   border-radius: 2px;
+  padding-left: 5px;
 }
 
 .event-btn {
@@ -2150,9 +2154,10 @@ color: #3498DB;}
 }
 
 
-#boxe {
+.boxe {
   display: flex;
-  margin-top: 80px;
+  margin-top: 20px;
+  box-align: center;
 }
 .itemr {
   margin: 0 5px;
