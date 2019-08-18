@@ -17,7 +17,6 @@ body {
   background: #000000;  /* fallback for old browsers */
   max-width: 100% !important;
   overflow-x: hidden;
-  position: relative;
 }
 
 first-letter {
