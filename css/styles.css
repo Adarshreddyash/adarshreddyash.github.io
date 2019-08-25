@@ -2415,3 +2415,8 @@ img.resize {
 
 }
 
+.top-men-bar{
+  background:#fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
