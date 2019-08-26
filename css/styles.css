@@ -18,6 +18,21 @@ body {
   max-width: 100% !important;
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  width: 9px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #6b0f1a;
+background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+outline: 1px solid slategrey;
+
+  
+}
 
 first-letter {
   color: #557DBF;
