@@ -11,17 +11,17 @@
     {
       "src": "images/assets/rsz_28985009_2.jpg",
       "sizes": "72x72",
-      "type": "image/png"
+      "type": "image/jpg"
     },
     {
-      "src": "images/assets/pwa/icon96.png",
+      "src": "images/assets/96.jpg",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/jpg"
     },
     {
-      "src": "images/assets/pwa/icon128.png",
+      "src": "images/assets/128.jpg",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/jpg"
     },
     {
       "src": "images/assets/pwa/icon144.png",
