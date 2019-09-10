@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>adarshreddy adelli | Blogs</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="https://avatars3.githubusercontent.com/u/28985009?s=460&v=4" type="image/png"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
 	  $(document).ready(function() {
-    loadRSS('https://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
+    loadRSS('https://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'Read');   
 });
 
 function loadRSS(link, htmlContainer, author) {
@@ -19,17 +23,26 @@ function loadRSS(link, htmlContainer, author) {
             console.log(result.error);
         } else {
             var entries = result.feed.entries;
+           
             for(var i = 0; i < 20; i++){
                 var entry = entries[i];
-                container.append("<div class=\"col-md-4\">"+"<div class=\"carbon-example\flex-wrapper\">"+"<div class=\"inner-wrapper\">" 
-                    + "<a href=\"" + entry.link + "\" target=\"_blank\">" + entry.title+"</h2>" +"</a>" 
-					+ "</p>"+ "<p class=\"fine-print\">"+author+"</p>"+ "</div>"+"</div>"
-					+"</div>");
+                container.append("<div class=\"column\">"+"<div class=\"\">"+"<div class=\"card\">" +"<div class=\"card-body\">"
+                    + "<h4 class=\"card-title\" href=\"" + entry.link + "\" target=\"_blank\">" + entry.title+"</h2>" +"</a>" 
+                    +  entry.pubDate
+					+ "</p>"+ "<a href=\"" + entry.link + "\" class=\"btn btn-primary\">"+author+"</p>"+ "</div>"+"</div>"
+					+"</div>"+"</div>");
             }
         }
     });
 }
   </script>
+ <style>
+.gridgspace{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 10px;
+}
+  </style>
   <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
 </head>
 <body>
