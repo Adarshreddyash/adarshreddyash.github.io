@@ -2471,8 +2471,6 @@ img.resize {
 
 .glow-on-hover {
     cursor: pointer;
-    position: relative;
-    z-index: 0;
 }
 
 .glow-on-hover:before {
@@ -2492,7 +2490,7 @@ img.resize {
 }
 
 .glow-on-hover:active {
-    color:#2876f9
+    color:#0f0f0f
 }
 
 .glow-on-hover:active:after {
