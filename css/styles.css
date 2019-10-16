@@ -2489,11 +2489,10 @@ img.resize {
     animation: glowing 20s linear infinite;
     opacity: 0;
     transition: opacity .3s ease-in-out;
-    border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color: #000
+    color:#2876f9
 }
 
 .glow-on-hover:active:after {
@@ -2510,10 +2509,8 @@ img.resize {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #111;
     left: 0;
     top: 0;
-    border-radius: 10px;
 }
 
 @keyframes glowing {
