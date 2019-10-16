@@ -2468,7 +2468,9 @@ img.resize {
   
 }
 
-
+.background-img-side{
+  background-image: url("https://raw.githubusercontent.com/Adarshreddyash/background-images-icons/master/2.png");
+}
 .glow-on-hover {
     cursor: pointer;
 }
