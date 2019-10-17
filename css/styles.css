@@ -168,7 +168,7 @@ p {
   width: 7px;
   animation-delay: -0.2s;
   transform: translate3d(5vw, 12vh, 27px);
-  background: #26d9cd;
+  background: #0af1e2;
 }
 @keyframes particle-animation-2 {
   100% {
@@ -182,7 +182,7 @@ p {
   width: 6px;
   animation-delay: -0.4s;
   transform: translate3d(37vw, 73vh, 75px);
-  background: #b5d926;
+  background: #f4f5ef;
 }
 @keyframes particle-animation-3 {
   100% {
@@ -196,7 +196,7 @@ p {
   width: 9px;
   animation-delay: -0.6s;
   transform: translate3d(7vw, 26vh, 27px);
-  background: #38d926;
+  background: #cceb77;
 }
 @keyframes particle-animation-4 {
   100% {
@@ -210,7 +210,7 @@ p {
   width: 6px;
   animation-delay: -0.8s;
   transform: translate3d(83vw, 4vh, 95px);
-  background: #50d926;
+  background: #6c63c3;
 }
 @keyframes particle-animation-5 {
   100% {
@@ -224,7 +224,7 @@ p {
   width: 9px;
   animation-delay: -1s;
   transform: translate3d(26vw, 30vh, 93px);
-  background: #3ed926;
+  background: #b7e2b0;
 }
 @keyframes particle-animation-6 {
   100% {
@@ -252,7 +252,7 @@ p {
   width: 8px;
   animation-delay: -1.4s;
   transform: translate3d(54vw, 13vh, 79px);
-  background: #d926d9;
+  background: #f561f5;
 }
 @keyframes particle-animation-8 {
   100% {
@@ -266,7 +266,7 @@ p {
   width: 10px;
   animation-delay: -1.6s;
   transform: translate3d(64vw, 83vh, 71px);
-  background: #264dd9;
+  background: #c7e754;
 }
 @keyframes particle-animation-9 {
   100% {
@@ -294,7 +294,7 @@ p {
   width: 7px;
   animation-delay: -2s;
   transform: translate3d(57vw, 53vh, 64px);
-  background: #35d926;
+  background: #e44545;
 }
 @keyframes particle-animation-11 {
   100% {
@@ -308,7 +308,7 @@ p {
   width: 7px;
   animation-delay: -2.2s;
   transform: translate3d(60vw, 73vh, 33px);
-  background: #7126d9;
+  background: #ad81eb;
 }
 @keyframes particle-animation-12 {
   100% {
@@ -350,7 +350,7 @@ p {
   width: 9px;
   animation-delay: -2.8s;
   transform: translate3d(23vw, 19vh, 38px);
-  background: #d926a6;
+  background: #ee59c4;
 }
 @keyframes particle-animation-15 {
   100% {
@@ -378,7 +378,7 @@ p {
   width: 10px;
   animation-delay: -3.2s;
   transform: translate3d(43vw, 14vh, 42px);
-  background: #b8d926;
+  background: #ffffff;
 }
 @keyframes particle-animation-17 {
   100% {
@@ -504,7 +504,7 @@ p {
   width: 6px;
   animation-delay: -5s;
   transform: translate3d(41vw, 64vh, 35px);
-  background: #d92638;
+  background: #2a0106;
 }
 @keyframes particle-animation-26 {
   100% {
@@ -518,7 +518,7 @@ p {
   width: 9px;
   animation-delay: -5.2s;
   transform: translate3d(7vw, 57vh, 81px);
-  background: #26d968;
+  background: #ffffff;
 }
 @keyframes particle-animation-27 {
   100% {
@@ -532,7 +532,7 @@ p {
   width: 8px;
   animation-delay: -5.4s;
   transform: translate3d(5vw, 44vh, 77px);
-  background: #26cdd9;
+  background: #0a2d2f;
 }
 @keyframes particle-animation-28 {
   100% {
@@ -560,7 +560,7 @@ p {
   width: 10px;
   animation-delay: -5.8s;
   transform: translate3d(23vw, 58vh, 68px);
-  background: #5fd926;
+  background: #ffffff;
 }
 @keyframes particle-animation-30 {
   100% {
