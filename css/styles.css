@@ -1291,7 +1291,7 @@ border-radius: 25px;
 
 .card.hovercard{
   background-color: rgb(255, 253, 253);
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
   background-blend-mode: darken;
   max-width: 100% !important;
   border-radius: 5px 50px 1px 1px;
@@ -1319,7 +1319,7 @@ border-radius: 25px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  border: 5px solid rgba(255,255,255,0.5);
+  border: 5px solid rgba(246, 245, 245, 0.5);
 }
 
 .card.hovercard .info {
