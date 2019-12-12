@@ -1281,7 +1281,7 @@ border-radius: 25px;
 
   background-blend-mode: darken;
   max-width: 100% !important;
-  border-radius: 5px 50px 1px 1px;
+  border-radius: 40px 50px 1px 1px;
   
 }
 .card.hovercard .cardheader {
