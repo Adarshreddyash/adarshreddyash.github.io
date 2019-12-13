@@ -49,7 +49,7 @@ body {
   background: #000000;  /* fallback for old browsers */
   max-width: 100% !important;
   overflow-x: hidden;
-  background-image: url(https://i.pinimg.com/originals/59/e6/11/59e611d90f95354492691aaaa623fb88.png);
+  background-image: url("https://i.pinimg.com/originals/59/e6/11/59e611d90f95354492691aaaa623fb88.png");
 }
 
 
