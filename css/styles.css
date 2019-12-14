@@ -49,7 +49,6 @@ body {
   background: #000000;  /* fallback for old browsers */
   max-width: 100% !important;
   overflow-x: hidden;
-  background-image: url("./images/assets/59e611d90f95354492691aaaa623fb88.png");
 }
 
 
@@ -1278,7 +1277,7 @@ border-radius: 25px;
 /*team card stying*/
 
 .card.hovercard{
-  background-color: rgb(255, 253, 253);
+  background-color: rgb(241, 237, 237);
 
   background-blend-mode: darken;
   max-width: 100% !important;
