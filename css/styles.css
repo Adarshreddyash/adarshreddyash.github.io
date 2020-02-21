@@ -911,7 +911,6 @@ border-radius: 25px;
 }
 
 .con-foot{
-  margin-bottom:-40px;
   margin-top:65px;
 }
 
@@ -1445,10 +1444,15 @@ border-radius: 25px;
 .footer {
   left: 0;
   bottom: 0;
+  margin-bottom:-20px;
   width: 100%;
-  background-color:transparent;
+  background-color:#000;
   color: white;
+  font-weight: bolder;
   text-align: center;
+}
+footer .p{
+  padding-top:6px;
 }
 .social-list__inline li {
   display: -webkit-inline-box;
