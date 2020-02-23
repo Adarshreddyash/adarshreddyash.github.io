@@ -1,53 +1,52 @@
 {
-  "background_color": "#000000",
+  "name": "Adarshreddy Adelli",
+  "short_name": "ASH",
+  "theme_color": "#000000",
+  "background_color": "#f1f2f4",
   "display": "standalone",
-  "orientation":"portrait",
-  "theme_color": "#2F5BE7",
-  "short_name": "Adarshreddy adelli",
-  "name": "Adarshreddy adelli",
-  "description": "A passionate developer",
-  "lang": "en-US",
+  "Scope": "/",
+  "start_url": "index.html",
   "icons": [
     {
-      "src": "images/assets/rsz_28985009_2.jpg",
+      "src": "images/icons/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "images/assets/96.jpg",
+      "src": "images/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "images/assets/128.jpg",
+      "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "images/assets/144.jpg",
+      "src": "images/icons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "images/assets/152.jpg",
+      "src": "images/icons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "images/assets/192.jpg",
+      "src": "images/icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "images/assets/384.jpg",
+      "src": "images/icons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "images/assets/512.jpg",
+      "src": "images/icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/jpg"
+      "type": "image/png"
     }
   ],
-  "start_url": "index.html?launcher=true"
+  "splash_pages": null
 }
