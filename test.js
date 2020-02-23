@@ -1,3 +1,4 @@
+<html>
 <script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
 <script>
   var url = 'https://devblog.ricky.me/rss.xml'
@@ -14,3 +15,4 @@
     }
   })
 </script>
+</html>
