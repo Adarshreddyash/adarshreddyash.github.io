@@ -1,8 +1,8 @@
-self.addEventListener('fetch', function (event) {
-    event.respondWith(caches.open('cache').then(function (cache) {
-        return cache.match(event.request).then(function (response) {
+self.addEventListener('fetch', function(event) {
+    event.respondWith(caches.open('cache').then(function(cache) {
+        return cache.match(event.request).then(function(response) {
             console.log("cache request: " + event.request.url);
-            var fetchPromise = fetch(event.request).then(function (networkResponse) {
+            var fetchPromise = fetch(event.request).then(function(networkResponse) {
                 console.log("fetch completed: " + event.request.url, networkResponse);
                 if (networkResponse) {
                     console.debug("updated cached page: " + event.request.url, networkResponse);
@@ -11,12 +11,11 @@ self.addEventListener('fetch', function (event) {
                     }
                 }
                 return networkResponse;
-            }, function (event) {
+            }, function(event) {
                 console.log("Error in fetch()", event);
                 event.waitUntil(
-                    caches.open('cache').then(function (cache) {
-                        return cache.addAll
-                        ([
+                    caches.open('cache').then(function(cache) {
+                        return cache.addAll([
                             '/',
                             '/index.html',
                             '/index.html?homescreen=1',
@@ -39,6 +38,7 @@ self.addEventListener('fetch', function (event) {
                             '/images/assets/technologies/mi.png',
                             '/images/assets/technologies/web.png',
                             '/images/icon.png',
+                            '/images/divider-triangle.png',
                             '/js/custom.js',
                             '/js/vendors/bootstrap.bundle.min.js',
                             '/js/vendors/jquery.easing.min.js',
@@ -56,7 +56,7 @@ self.addEventListener('fetch', function (event) {
         });
     }));
 });
-self.addEventListener('install', function (event) {
+self.addEventListener('install', function(event) {
     self.skipWaiting();
     console.log("Latest version installed!");
 });
