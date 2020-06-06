@@ -58,5 +58,5 @@ self.addEventListener('fetch', function(event) {
 });
 self.addEventListener('install', function(event) {
     self.skipWaiting();
-    console.log("Latest version installed!");
+    console.log("Latest version of ASH installed!");
 });
