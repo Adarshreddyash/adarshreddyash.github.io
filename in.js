@@ -1,144 +1,255 @@
-function ashprint() {
-    window.print();
-  }
 
-  $(document).ready(function() {
-<<<<<<< HEAD
-    loadRSS('http://glammingspace.blogspot.com/atom.xml', '#Newsfeed', 'adarshreddy');   
-=======
-    loadRSS('https://glammingspace.blogspot.com/feeds/posts/default?alt=rss', '#Newsfeed', 'adarshreddy');   
->>>>>>> fb5b8e16fbb32a57940735b8da00eeb1cf7eb4ad
+var transparent = true;
+var big_image;
+
+var transparentDemo = true;
+var fixedTop = false;
+
+var navbar_initialized,
+  backgroundOrange = false,
+  toggle_initialized = false;
+
+var nowuiKit,
+  $navbar,
+  scroll_distance,
+  oVal;
+
+$(document).ready(function() {
+
+  $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+
+  $('[data-toggle="popover"]').each(function() {
+    color_class = $(this).data('color');
+    $(this).popover({
+      template: '<div class="popover popover-' + color_class + '" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+    });
   });
-  
-  function loadRSS(link, htmlContainer, author) {
-      var url = link;
-      var container = $(htmlContainer);
-  
-      feednami.load(url, function(result){
-          if (result.error) {
-              console.log(result.error);
-          } else {
-              var entries = result.feed.entries;
-              for(var i = 0; i < 6; i++){
-                  var entry = entries[i];
-                  container.append("<div class=\"row\">"+"<div class=\"col-sm-6\">"+"<div class=\"card\">" 
-                      +"<div class=\"card-body\">"+"<a +class=\"card-title\" href=\"" + entry.link + "\"  target=\"_blank\">" + entry.title+"</h2>" +"</a>" 
-            + "</p>"+ "<p class=\"fine-print\">"+author+"</p>"+ "</div>"+"</div>"
-            +"</div>"+"</div>");
-              }
-          }
-      });
+
+
+  nowuiKit.initNavbarImage();
+
+  $navbar = $('.navbar[color-on-scroll]');
+  scroll_distance = $navbar.attr('color-on-scroll') || 500;
+
+
+
+  if ($('.navbar[color-on-scroll]').length != 0) {
+    nowuiKit.checkScrollForTransparentNavbar();
+    $(window).on('scroll', nowuiKit.checkScrollForTransparentNavbar)
   }
 
-/* ---- particles.js config ---- */
+  $('.form-control').on("focus", function() {
+    $(this).parent('.input-group').addClass("input-group-focus");
+  }).on("blur", function() {
+    $(this).parent(".input-group").removeClass("input-group-focus");
+  });
 
-particlesJS("particle-container", {
-  "particles": {
-    "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
+
+  $('.bootstrap-switch').each(function() {
+    $this = $(this);
+    data_on_label = $this.data('on-label') || '';
+    data_off_label = $this.data('off-label') || '';
+
+    $this.bootstrapSwitch({
+      onText: data_on_label,
+      offText: data_off_label
+    });
+  });
+
+  if ($(window).width() >= 992) {
+    big_image = $('.page-header-image[data-parallax="true"]');
+
+    $(window).on('scroll', nowuiKitDemo.checkScrollForParallax);
+  }
+
+  // Activate Carousel
+  $('.carousel').carousel({
+    interval: 4000
+  });
+
+  $('.date-picker').each(function() {
+    $(this).datepicker({
+      templates: {
+        leftArrow: '<i class="now-ui-icons arrows-1_minimal-left"></i>',
+        rightArrow: '<i class="now-ui-icons arrows-1_minimal-right"></i>'
       }
-    },
-    "color": {
-      "value": "random"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
+    }).on('show', function() {
+      $('.datepicker').addClass('open');
+
+      datepicker_color = $(this).data('datepicker-color');
+      if (datepicker_color.length != 0) {
+        $('.datepicker').addClass('datepicker-' + datepicker_color + '');
       }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": false,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 1,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": false,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
+    }).on('hide', function() {
+      $('.datepicker').removeClass('open');
+    });
+  });
+
+
 });
+
+
+nowuiKitDemo = {
+  checkScrollForParallax: debounce(function() {
+    var current_scroll = $(this).scrollTop();
+
+    oVal = ($(window).scrollTop() / 3);
+    big_image.css({
+      'transform': 'translate3d(0,' + oVal + 'px,0)',
+      '-webkit-transform': 'translate3d(0,' + oVal + 'px,0)',
+      '-ms-transform': 'translate3d(0,' + oVal + 'px,0)',
+      '-o-transform': 'translate3d(0,' + oVal + 'px,0)'
+    });
+
+  }, 6)
+
+}
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this,
+      args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    }, wait);
+    if (immediate && !timeout) func.apply(context, args);
+  };
+};
+
+$(window).on('resize', function() {
+  nowuiKit.initNavbarImage();
+});
+
+$(document).on('click', '.navbar-toggler', function() {
+  $toggle = $(this);
+
+  if (nowuiKit.misc.navbar_menu_visible == 1) {
+    $('html').removeClass('nav-open');
+    nowuiKit.misc.navbar_menu_visible = 0;
+    $('#bodyClick').remove();
+    setTimeout(function() {
+      $toggle.removeClass('toggled');
+    }, 550);
+  } else {
+    setTimeout(function() {
+      $toggle.addClass('toggled');
+    }, 580);
+    div = '<div id="bodyClick"></div>';
+    $(div).appendTo('body').click(function() {
+      $('html').removeClass('nav-open');
+      nowuiKit.misc.navbar_menu_visible = 0;
+      setTimeout(function() {
+        $toggle.removeClass('toggled');
+        $('#bodyClick').remove();
+      }, 550);
+    });
+
+    $('html').addClass('nav-open');
+    nowuiKit.misc.navbar_menu_visible = 1;
+  }
+});
+
+nowuiKit = {
+  misc: {
+    navbar_menu_visible: 0
+  },
+
+  checkScrollForTransparentNavbar: debounce(function() {
+    if ($(document).scrollTop() > scroll_distance) {
+      if (transparent) {
+        transparent = false;
+        $('.navbar[color-on-scroll]').removeClass('navbar-transparent');
+      }
+    } else {
+      if (!transparent) {
+        transparent = true;
+        $('.navbar[color-on-scroll]').addClass('navbar-transparent');
+      }
+    }
+  }, 17),
+
+  initNavbarImage: function() {
+    var $navbar = $('.navbar').find('.navbar-translate').siblings('.navbar-collapse');
+    var background_image = $navbar.data('nav-image');
+
+    if (background_image != undefined) {
+      if ($(window).width() < 991 || $('body').hasClass('burger-menu')) {
+        $navbar.css('background', "url('" + background_image + "')")
+          .removeAttr('data-nav-image')
+          .css('background-size', "cover")
+          .addClass('has-image');
+      } else {
+        $navbar.css('background', "")
+          .attr('data-nav-image', '' + background_image + '')
+          .css('background-size', "")
+          .removeClass('has-image');
+      }
+    }
+  },
+
+  initSliders: function() {
+
+    var slider = document.getElementById('sliderRegular');
+
+    noUiSlider.create(slider, {
+      start: 40,
+      connect: [true, false],
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+
+    var slider2 = document.getElementById('sliderDouble');
+
+    noUiSlider.create(slider2, {
+      start: [20, 60],
+      connect: true,
+      range: {
+        min: 0,
+        max: 100
+      }
+    });
+  }
+}
+
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this,
+      args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    }, wait);
+    if (immediate && !timeout) func.apply(context, args);
+  };
+};
+
+$(document).ready(function() {
+  Siterss('https://siftrss.com/f/zQ8QJ6edn', '#Newsfeed', 'Gspace');   
+});
+
+function Siterss(link, htmlContainer, author) {
+  var url = link;
+  var container = $(htmlContainer);
+
+  feednami.load(url, function(result){
+      if (result.error) {
+          console.log(result.error);
+      } else {
+          var entries = result.feed.entries;
+          for(var i = 0; i < 16; i++){
+              var entry = entries[i];
+              container.append("<li class=\"RSScard\"><p><h2>" 
+                  + "<a href=\"" + entry.link + "\" target=\"_blank\">" + entry.title +"</a>" 
+                  + "</h2></p>"+ author + "</li>");
+          }
+      }
+  });
+}
