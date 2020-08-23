@@ -48,11 +48,15 @@
     <meta name="msapplication-navbutton-color" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="#5f5eaa">
     <link rel="icon" href="https://avatars3.githubusercontent.com/u/28985009?s=460&v=4" type="image/png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+      <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">    
+     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142753069-1"></script>
@@ -62,315 +66,277 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-142753069-1');
-    </script>
-    <script>
-        $(document).ready(function() {
-            Siterss('https://siftrss.com/f/zQ8QJ6edn', '#Newsfeed', 'Gspace');
-        });
-
-        function Siterss(link, htmlContainer, author) {
-            var url = link;
-            var container = $(htmlContainer);
-
-            feednami.load(url, function(result) {
-                if (result.error) {
-                    console.log(result.error);
-                } else {
-                    var entries = result.feed.entries;
-                    for (var i = 0; i < 16; i++) {
-                        var entry = entries[i];
-                        container.append("<li class=\"RSScard\"><p><p>" +
-                            "<a href=\"" + entry.link + "\" target=\"_blank\">" + entry.title + "</a>" +
-                            "</p></p>" + author + "</li>");
-                    }
-                }
-            });
-        }
-    </script>
 </head>
-
-<body>
-    <div id="particle-container container">
-    </div>
-    <div class="ash-head">
-        <svg version="1.1" id="rocket-animation" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 800 800"> 
-                    <g id="rocket"> 
-                        <g> 
-                            <path class="fill-grey" d="M120.783,150.852l-0.028-0.269c6.563-8.526,12.536-34.443,13.354-38.156 c1.496-1.359,3.009-2.768,4.535-4.241c18.597-17.889,42.638-48.011,51.123-89.871c0.283-1.415-0.205-3.034-1.272-4.101 c-1.067-1.068-2.624-1.493-4.066-1.238c-41.811,8.436-71.933,32.448-89.85,51.102c-1.486,1.547-2.907,3.079-4.276,4.593 c-1.958,0.432-29.846,6.96-38.206,13.354c-8.345,6.505-23.83,23.687-24.466,24.465c-1.414,1.555-1.485,3.747-0.495,5.445 c0.142,0.282,0.424,0.564,0.637,0.777c1.202,1.201,2.899,1.625,4.455,1.202c13.717-4.102,27.966-6.612,32.703-5.835 c0.212,2.9,0.92,7.708,2.8,12.616c-4.172,7.565-7.792,15.004-8.506,16.425c-0.835,1.825-0.452,3.847,0.891,5.189l0.269,0.269 c1.314,1.514,3.535,2.052,5.423,1.139c1.365-0.657,8.026-3.924,15.132-7.82c4.052,1.974,8.747,2.808,14.022,2.524 c0.565,5.091-1.916,18.943-5.926,32.258c-0.474,1.605-0.043,3.296,1.11,4.448c0.269,0.269,0.537,0.452,0.778,0.636 c1.746,1.082,3.931,0.877,5.43-0.48C97.103,174.674,114.369,159.217,120.783,150.852z M79.927,123.675 c-0.196-0.23-0.387-0.469-0.574-0.712c-0.041-0.054-0.081-0.106-0.122-0.16c-0.453-0.606-0.876-1.243-1.256-1.889 c2.688-4.667,5.303-8.556,7-10.253l-0.071-0.085c4.88-4.88,12.8-8.98,18.88-11.667c-2.672,6.095-6.76,14.028-11.639,18.907 c-1.768,1.769-5.925,4.425-10.852,7.275c-0.173-0.158-0.347-0.315-0.514-0.483c-0.014-0.013-0.025-0.028-0.039-0.041 C80.457,124.281,80.189,123.98,79.927,123.675z M132.605,101.441c-17.119,16.512-32.965,25.682-36.356,27.551l-0.002-0.002 c-1.541,0.184-2.983,0.239-4.341,0.183c2.793-1.803,5.141-3.528,6.605-4.991c10.251-10.253,16.884-30.093,17.159-30.921 c0.588-1.576,0.142-3.395-1.061-4.597l-0.494-0.494c-1.202-1.202-2.949-1.576-4.596-1.061c-0.836,0.269-20.648,6.93-30.901,17.182 c-1.272,1.272-2.687,3.253-4.256,5.529c-0.212-1.485-0.269-2.702-0.312-3.507c4.045-7.581,32.428-55.054,86.307-76.692 c0.8,2.78,2.306,5.897,4.837,8.429c1.96,1.96,4.548,3.572,7.873,4.448C162.516,68.722,146.078,88.463,132.605,101.441z M168.805,26.489c3.407-1.136,6.902-2.173,10.497-3.082c-0.914,3.614-1.955,7.126-3.096,10.543 C170.942,32.969,169.309,28.866,168.805,26.489z M47.302,100.677l-0.135,0.021c-0.799,0.163-1.591,0.318-2.362,0.495 c4.456-4.596,9.44-9.439,12.82-12.112c3.955-2.967,14.119-6.356,22.881-8.76c-6.331,8.117-10.63,14.878-12.987,18.856 C63.904,98.416,57.907,98.5,47.302,100.677z M101.55,157.895l-0.027,0.015l0.51-2.348c2.15-10.602,2.287-16.602,1.512-20.269 c3.958-2.354,10.702-6.634,18.796-12.949c-2.43,8.769-5.736,18.889-8.699,22.753C111.053,148.448,106.146,153.44,101.55,157.895z" /> 
-                            <path class="fill-color" d="M173.164,42.526c-3.373-0.87-5.989-2.496-7.969-4.476c-2.531-2.531-4.037-5.649-4.837-8.429 c-53.879,21.638-82.262,69.111-86.307,76.692c0.043,0.805,0.1,2.021,0.312,3.507c1.569-2.276,2.983-4.257,4.256-5.529 c10.252-10.252,30.065-16.914,30.901-17.182c1.646-0.516,3.394-0.142,4.596,1.061l0.494,0.494 c1.202,1.202,1.648,3.021,1.061,4.597c-0.275,0.828-6.908,20.668-17.159,30.921c-1.465,1.463-3.812,3.188-6.605,4.991 c1.357,0.057,2.8,0.001,4.341-0.183l0.063,0.077c3.375-1.859,19.226-11.038,36.366-27.556 C146.154,88.486,162.629,68.759,173.164,42.526z M137.704,65.004c-2.949-2.949-2.949-7.729,0-10.677 c2.947-2.948,7.729-2.948,10.677,0c2.948,2.949,2.948,7.729,0,10.677C145.433,67.953,140.653,67.953,137.704,65.004z"/> 
-                            <path class="fill-grey" d="M154.569,48.126c-6.351-6.35-16.716-6.336-23.066,0.014c-6.35,6.35-6.35,16.701,0,23.052l0.028-0.001 c6.35,6.35,16.701,6.351,23.052,0C160.932,64.842,160.918,54.475,154.569,48.126z M137.866,64.828 c-2.843-2.843-2.828-7.495,0.015-10.338c2.842-2.842,7.48-2.843,10.323,0l0.014,0.014c2.843,2.843,2.828,7.495-0.015,10.338 C145.362,67.684,140.708,67.67,137.866,64.828z"/> 
-                        </g>
-                        <line fill="none" class="path stroke-color" stroke-width="7" stroke-miterlimit="10" x1="52.27" y1="122.222" x2="19.923" y2="154.569"/> 
-                        <line fill="none" class="path stroke-color" stroke-width="7" stroke-miterlimit="10" x1="80.698" y1="150.65" x2="48.351" y2="182.996"/>
-                    </g>
-                    
-                    
-                        <!-- ANIMATION PATH + OPTIONS -->
-                    <animateMotion xlink:href="#rocket" dur="20s"	 begin="0s" repeatCount="indefinite" path="M59.6,418.9c0,0,340.4-758.3,680.7,0" />
-                </svg>
-        <img class="object_moon" src="assets/moon.svg" width="80px">
-        <log class="active" href="#">My Portfolio<span class="badge badge-warning">beta</span></log>
-        <a href="mailto:adarshreddy9849@gmail.com" style="background:rgb(48, 47, 47); font-size: 1.5em;" class="ripple"><i class="fas fa-envelope text-danger"></i></a>
-        <a href="https://api.whatsapp.com/send?phone=+919160225766&text=hello ash!!" style="background:rgb(48, 47, 47);font-size: 1.5em;"><i class="fab fa-whatsapp text-green fa-1x"></i></a>
-        <a href="tel:+919160225766" class="top-men-bar" style="font-size: 1.5em;"><i class="fas fa-phone text-blue"></i></a>
-        <div style="text-align:right;">
-            <svg xmlns="https://www.w3.org/2000/svg" width="270.11" height="649.9" overflow="visible">
-            <style>
-              .geo-arrow {
-                fill: none;
-                stroke: #7f00ff!important;
-                stroke-width: 2;
-                stroke-miterlimit: 10
-              }
-            </style>
-            <g class="item-to bounce-1">
-              <path class="geo-arrow draw-in" d="M135.06 142.564L267.995 275.5 135.06 408.434 2.125 275.499z" />
-            </g>
-            <circle class="geo-arrow item-to bounce-2" cx="194.65" cy="69.54" r="7.96" />
-            <circle class="geo-arrow draw-in" cx="194.65" cy="39.5" r="7.96" />
-            <circle class="geo-arrow item-to bounce-3" cx="194.65" cy="9.46" r="7.96" />
-            <g class="geo-arrow item-to bounce-2">
-              <path class="st0 draw-in" d="M181.21 619.5l13.27 27 13.27-27zM194.48 644.5v-552" />
-            </g>
-          </svg>
-        </div>
-    </div>
-    <div class="none">
-        <div class="card hovercard con-foot">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="avatar">
-                <img src="https://raw.githubusercontent.com/Adarshreddyash/adarshreddyash.github.io/master/images/ash.jpg" alt="adarshreddy adelli portfolio">
+    <body class="profile-page sidebar-collapse">
+  
+        <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+          <div class="container" >
+            <div class="dropdown button-dropdown">
+              <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-header">Dropdown header</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">One more separated link</a>
+              </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-lg-6 col-md-6">
-                    <div class="info">
-                        <div class="bio">
-                            <div class="title" style="padding-top: 20px;">
-                                <span><div class="animate__animated animate__fadeInTopRight" style="float: left; font-weight: 700; font-size: 32px; color: blueviolet">/</div><h2 class="fade_anima-in">Adarshreddy adelli</h2></span>
-                                <p>
-                                    <a href="" class="typewrite text-primary" data-period="2000" data-type='[ "Hi, Im FullStack Developer.", "I am Creative.", "I Love Design.", "I Love to Research." ]'>
-                                        <span class="wrap"></span>
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="desc animate__bounceInRight">Artificial Intelligence</div>
-                            <div class="desc">Full Stack Dev</div>
-                            <div class="desc">Cyber Secuirity</div>
-                            <div id="bottom">
-                                <ul class="social-list__inline mt-10 animate__animated  animate__fadeInUp">
-                                    <li><a href="https://www.twitter.com/adarshreddyash" class="text-primary"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="https://www.github.com/adarshreddyash" class="text"><i class="fab fa-github"></i></a></li>
-                                    <li><a href="https://www.instagram.com/adarshreddy_adelli/" class="text-warning"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/in/adarshreddy-adelli-76998b164/" class="text-primary"><i class="fab fa-linkedin"></i></a></li>
-                                    <li><a href="https://www.glammingspace.blogspot.com" class="text-warning"><i class="fas fa-blog"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="navbar-translate" >
+              <a class="navbar-brand" data-placement="bottom" target="_blank">
+                My profile
+              </a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar top-bar"></span>
+                <span class="navbar-toggler-bar middle-bar"></span>
+                <span class="navbar-toggler-bar bottom-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+              <ul class="navbar-nav">
+               
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Hire me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="#" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <p class="d-lg-none d-xl-none">Twitter</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/lima.hmd.39" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                    <p class="d-lg-none d-xl-none">Facebook</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/lamoush__/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <p class="d-lg-none d-xl-none">Instagram</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="wrapper" >
+          <div class="page-header clear-filter" filter-color="orange" >
+            <div class="page-header-image" data-parallax="true">
+            </div>
+            <div class="container">
+              <div class="photo-container">
+                  <div class="img">
+                <img src="https://raw.githubusercontent.com/Adarshreddyash/adarshreddyash.github.io/master/images/ash.jpg" alt="">
+              </div>
+            </div>
+              <h3 class="title">Adarshreddy Adelli</h3>
+              <p class="typewrite category" data-period="2000" data-type='[ "Hi, Im FullStack Developer.", "I am Creative.", "I Love Design.", "I Love to Research." ]'></p>
+            </div>
+          </div>
+          <div class="section">
+            <div class="container">
+              <div class="button-container">
+                <a href="#button" class="btn btn-primary btn-round btn-lg" style="font-weight:700;"><i class="mdi mdi-file-account"></i> Resume</a>
+                <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+              
+              <div class="how-section1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://raw.githubusercontent.com/Adarshreddyash/background-images-icons/0595777eb8d42e5d931f1a415c26435fc816e91f/undraw_version_control_9bpv.svg" class="rounded-circle img-fluid" alt=""/>
+                    </div>
+                    <div class="col-md-6 shaper-poly">
+                  <h4>About me</h4>
+                              <h4 class="subheading">Passionate Developer from the earth</h4>
+                                <p class="text-muted">Streamlined hiring. GetLance’s sophisticated algorithms highlight projects you’re a great fit for.
+                                        Top Rated and Rising Talent programs. Enjoy higher visibility with the added status of prestigious programs.
+                                        Do substantial work with top clients. GetLance pricing encourages freelancers to use GetLance for repeat relationships with their clients.</p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-lg-6 col-md-6" style="padding-top: 0px;">
-                    <div class="info">
-                        <div class="bio2">
-                            <div class="boxe">
-                                <a href="assets/Adarshreddy's%20Resume%20-in.pdf" class="hero-button text-white norm-button glow-on-hover ripple">
-                                    <i class="far fa-address-card icon"></i>MY CV
-                                </a>
-                                <a href="mailto:adarshreddy9849@gmail.com" class="hero-button button bg-violet text-white  ml-10 ripple">
-                                    <i class="fas fa-file-contract icon"></i>HIRE ME
-                                </a>
-                            </div>
-                        </div>
-                        <div class="mt-20 animate__animated animate__zoomInDown" style="padding-top: 20px;">
-                            <h4 class="text-secondary">
-                                About:
-                            </h4>
-                            <p>I would love to build products that influence a larger community by making their things easier. Proud to be a Dev. A loyal person to Hactivism and Anonymous.True beliver of quote "You can't claim trust, You have to earn it".</p>
-                        </div>
+
+                <div class="row">
+                  <span style="background-image: url(https://raw.githubusercontent.com/Adarshreddyash/background-images-icons/master/Vector.svg);  margin-right: -15px;
+                  margin-left: -190px; background-repeat: no-repeat;">
+                    <div class="col-md-6">
+                        <h4 class="pd-cust text-white">Tech Stack</h4>
+                                    <h4 class="subheading pd-cust">CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK.</h4>
+                                  <div class="pd-cust"> 
+                                    <div class="tag">
+                                        <img class="icon-hol" src="https://img.icons8.com/color/48/000000/python.png">
+                                        <div class="text-blue icon-hol-des">&nbsp Python</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <i class="fab fa-html5 fa-2x icon-hol text-warning"></i>
+                                        <div class="text-warning icon-hol-des">&nbsp Html</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <i class="fab fa-css3 fa-2x icon-hol text-red"></i>
+                                        <div class="text-red icon-hol-des">&nbsp Css</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <img class="icon-hol" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/957px-Tensorflow_logo.svg.png">
+                                        <div class="text-warning icon-hol-des">&nbsp Tensorflow</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <img class="icon-hol bg-white" src="images/365630.png">
+                                        <div class="text-red icon-hol-des">&nbsp Scikit learn</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <i class="mdi mdi-nodejs mdi-24px icon-hol text-success"></i>
+                                        <div class="icon-hol-des text-success">&nbsp Nodejs</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <i class="fab fa-react fa-2x icon-hol text-black"></i>
+                                        <div class="text-black icon-hol-des">&nbsp React Native</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <i class="fab fa-docker fa-2x icon-hol text-blue"></i>
+                                        <div class="text-blue icon-hol-des">&nbsp Docker</div>
+                                        </button>
+                                    </div>
+            
+                                    <div class="tag">
+                                        <i class="mdi mdi-kubernetes mdi-24px icon-hol text-blue"></i>
+                                        <div class="text-blue icon-hol-des">&nbsp Kubernetes</div>
+                                        </button>
+                                    </div>
+                                    <div class="tag">
+                                        <i class="mdi mdi-aws mdi-24px icon-hol text-warning"></i>
+                                        <div class="text-warning icon-hol-des">&nbsp aws</div>
+                                        </button>
+                                    </div>
+                                    <div class="tag">
+                                        <i class="mdi mdi-google-cloud mdi-24px icon-hol text-danger"></i>
+                                        <div class="text-danger icon-hol-des">&nbsp Google Cloud</div>
+                                        </button>
+                                    </div>
+                                    <div class="tag">
+                                        <i class="mdi mdi-google-assistant mdi-24px icon-hol text-success"></i>
+                                        <div class="text-success icon-hol-des">&nbsp Actions on Google</div>
+                                        </button>
+                                    </div>
+                                    <div class="tag">
+                                        <i class="mdi mdi-vuejs mdi-24px icon-hol text-success"></i>
+                                        <div class="text-success icon-hol-des">&nbsp Vuejs</div>
+                                        </button>
+                                    </div>
+                                    <div class="tag">
+                                        <i class="mdi mdi-material-design mdi-24px icon-hol" style="color:#999;"></i>
+                                        <div class="text-green icon-hol-des" style="color:#999;">&nbsp Material Design</div>
+                                        </button>
+                                    </div>
+                                    <div class="tag">
+                                        <i class="mdi mdi-firebase mdi-24px icon-hol text-warning"></i>
+                                        <div class="text-warning icon-hol-des">&nbsp Firebase</div>
+                                        </button>
+                                    </div>
+                                  </div>
+                           </div>
+                
+                    <div class="col-md-6 how-img">
+                        <img src="https://raw.githubusercontent.com/Adarshreddyash/background-images-icons/0595777eb8d42e5d931f1a415c26435fc816e91f/undraw_coding_6mjf.svg" class="rounded-circle img-fluid" alt=""/>
                     </div>
+                  </span>
                 </div>
             </div>
-            <!-- tabs section -->
-            <div class="tabs">
-                <input type="radio" id="tab1" name="tab-control">
-                <input type="radio" id="tab2" name="tab-control">
-                <input type="radio" id="tab3" name="tab-control" checked>
-                <input type="radio" id="tab4" name="tab-control">
-                <input type="radio" id="tab5" name="tab-control">
 
-                <ul>
-                    <li title="Skills"><label for="tab1" role="button"><svg viewBox="0 0 36 32">
-                                  <path
-                                    d="M13 0c-1.869 0-3.419 1.281-3.863 3.013-0.050 0-0.088-0.013-0.137-0.013-2.206 0-4 1.794-4 4 0 0.3 0.037 0.594 0.106 0.875-1.825 0.75-3.106 2.537-3.106 4.625 0 0.787 0.2 1.519 0.519 2.181-1.5 0.863-2.519 2.463-2.519 4.319 0 2.081 1.275 3.869 3.087 4.619-0.056 0.288-0.087 0.581-0.087 0.881 0 2.488 2.013 4.5 4.5 4.5 0.256 0 0.506-0.031 0.75-0.075 0.6 1.781 2.262 3.075 4.25 3.075 2.488 0 4.5-2.012 4.5-4.5v-23.5c0-2.206-1.794-4-4-4zM36 19c0-1.856-1.019-3.456-2.519-4.319 0.325-0.662 0.519-1.394 0.519-2.181 0-2.088-1.281-3.875-3.106-4.625 0.063-0.281 0.106-0.575 0.106-0.875 0-2.206-1.794-4-4-4-0.050 0-0.094 0.013-0.137 0.013-0.444-1.731-1.994-3.013-3.863-3.013-2.206 0-4 1.788-4 4v23.5c0 2.488 2.012 4.5 4.5 4.5 1.988 0 3.65-1.294 4.25-3.075 0.244 0.044 0.494 0.075 0.75 0.075 2.488 0 4.5-2.012 4.5-4.5 0-0.3-0.031-0.594-0.087-0.881 1.813-0.75 3.087-2.538 3.087-4.619z">
-                                  </path>
-                                    </svg><br><span>Skills</span></label></li>
-                    <li title="Projects"><label for="tab2" role="button"><svg viewBox="0 0 32 32">
-                            <path
-                              d="M10.762 14.175c-0.912-0.181-1.762 0.556-1.762 1.488v3.15c0 0.637 0.444 1.15 1.044 1.375 1.137 0.425 1.956 1.525 1.956 2.813 0 1.656-1.344 3-3 3s-3-1.344-3-3v-15.5c0-0.831-0.669-1.5-1.5-1.5h-3c-0.831 0-1.5 0.669-1.5 1.5v15.5c0 5.594 5.131 10.013 10.938 8.794 3.4-0.712 6.144-3.462 6.856-6.856 1.087-5.181-2.313-9.825-7.031-10.762zM13.063 0c-0.575-0.031-1.063 0.425-1.063 1v1.975c0 0.531 0.412 0.969 0.938 0.994 8.087 0.438 14.587 7 15.056 15.094 0.031 0.525 0.469 0.938 0.994 0.938h2.006c0.575 0 1.031-0.488 1-1.063-0.531-10.2-8.731-18.4-18.931-18.938zM13.081 6c-0.581-0.044-1.081 0.419-1.081 1.006v2.006c0 0.525 0.406 0.956 0.925 0.994 4.8 0.394 8.625 4.263 9.056 9.075 0.050 0.519 0.475 0.919 0.994 0.919h2.012c0.581 0 1.050-0.5 1.006-1.081-0.525-6.881-6.031-12.387-12.912-12.919z">
-                            </path>
-                      </svg><br><span>Blogs</span></label></li>
-                    <li title="Blog Posts"><label for="tab3" role="button">
-                            <svg viewBox="0 0 24 24">
-                                    <path
-                                      d="M2,10.96C1.5,10.68 1.35,10.07 1.63,9.59L3.13,7C3.24,6.8 3.41,6.66 3.6,6.58L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.66,6.72 20.82,6.88 20.91,7.08L22.36,9.6C22.64,10.08 22.47,10.69 22,10.96L21,11.54V16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V10.96C2.7,11.13 2.32,11.14 2,10.96M12,4.15V4.15L12,10.85V10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V12.69L14,15.59C13.67,15.77 13.3,15.76 13,15.6V19.29L19,15.91M13.85,13.36L20.13,9.73L19.55,8.72L13.27,12.35L13.85,13.36Z" />
-                                    </svg><br><span>Projects</span></label></li>
-                    <li title="Research Papers"><label for="tab8" role="button"><svg viewBox="0 0 32 32">
-                                        <path
-                                          d="M19 3h-9.991c-1.109 0-2.009 0.898-2.009 2.007v22.985c0 1.109 0.891 2.007 1.997 2.007h15.005c1.103 0 1.997-0.891 1.997-1.997v-17.003h-4.994c-1.108 0-2.006-0.887-2.006-1.998v-6.002zM20 3v5.997c0 0.554 0.451 1.003 0.991 1.003h5.009l-6-7zM16.5 23l-4 3 1.5-5-4-3h5l1.5-5 1.5 5h5l-4 3 1.5 5-4-3z">
-                                        </path>
-                                      </svg><br><span>Publications</span></label></li>
-
-                    <li title="Timeline"><label for="tab8" role="button"><svg viewBox="0 0 24 24">
-                                        <path
-                                          d="M14,2A8,8 0 0,0 6,10A8,8 0 0,0 14,18A8,8 0 0,0 22,10H20C20,13.32 17.32,16 14,16A6,6 0 0,1 8,10A6,6 0 0,1 14,4C14.43,4 14.86,4.05 15.27,4.14L16.88,2.54C15.96,2.18 15,2 14,2M20.59,3.58L14,10.17L11.62,7.79L10.21,9.21L14,13L22,5M4.93,5.82C3.08,7.34 2,9.61 2,12A8,8 0 0,0 10,20C10.64,20 11.27,19.92 11.88,19.77C10.12,19.38 8.5,18.5 7.17,17.29C5.22,16.25 4,14.21 4,12C4,11.7 4.03,11.41 4.07,11.11C4.03,10.74 4,10.37 4,10C4,8.56 4.32,7.13 4.93,5.82Z" />
-                                      </svg><br><span>Timeline</span></label></li>
-                    <li title="Testimonial"><label for="tab6" role="button"><svg viewBox="0 0 32 32">
-                                    <path
-                                      d="M15.626 20.992l-4.025 10.485-1.726-3.876-3.876 1.726 3.978-10.363c1.581 1.202 3.53 1.945 5.648 2.028v0zM22.074 18.964l3.978 10.363-3.876-1.726-1.726 3.876-4.025-10.485c2.119-0.083 4.068-0.826 5.648-2.028v0 0zM16.026 20v0c-4.971 0-9-4.029-9-9s4.029-9 9-9c4.971 0 9 4.029 9 9s-4.029 9-9 9zM16.026 17c3.314 0 6-2.686 6-6s-2.686-6-6-6c-3.314 0-6 2.686-6 6s2.686 6 6 6v0zM16.026 16c2.761 0 5-2.239 5-5s-2.239-5-5-5c-2.761 0-5 2.239-5 5s2.239 5 5 5v0z">
-                                    </path>    
-                                </svg><br><span>Testimonial</span></label></li>
-                </ul>
-
-                <div class="slider one-edge-shadow">
-                    <div class="indicator"></div>
+              <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <h4 class="title text-center">Blogs / Projects \contact</h4>
+                  <div class="nav-align-center">
+                    <ul class="nav nav-pills nav-pills-primary nav-pills-just-icons" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#profile" role="tablist">
+                          <i class="mdi mdi-blogger"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
+                          <i class="mdi mdi-desktop-classic"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#messages" role="tablist">
+                          <i class="mdi mdi-card-account-mail "></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <hr>
-                <div class="content">
-                    <section>
-                        <h2>Skills</h2>
-                        <div class="tag">
-                            <img class="icon-hol" src="https://img.icons8.com/color/48/000000/python.png">
-                            <div class="text-blue icon-hol-des">Python</div>
-                            </button>
+               
+                <div class="tab-content gallery">
+                  <div class="tab-pane active" id="home" role="tabpanel">
+                    <div class="col-md-10 ml-auto mr-auto">
+                      <div class="row collections">
+                        <ul class="projects-ul"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="profile" role="tabpanel">
+                    <div class="col-md-10 ml-auto mr-auto">
+                      <div class="row collections">
+                          <ul id="Newsfeed"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="messages" role="tabpanel">
+                    <div class="col-md-10 ml-auto mr-auto">
+                      <div class="row collections">
+                        <div class="col-md-6">
+                        <h3>Have a project ?</h3>
+                        <h4>Lets discuss</h4>
+                        <p class="font-weight-bold"><i class="mdi mdi-card-account-mail"></i> me@adarshreddyash.me</p>
+                        <p class="font-weight-bold"><i class="mdi mdi-card-account-phone"></i>+91 9160225766</p>
                         </div>
-
-                        <div class="tag">
-                            <i class="fab fa-html5 fa-2x icon-hol text-warning"></i>
-                            <div class="text-warning icon-hol-des">Html</div>
-                            </button>
+                        <div class="col-md-6">
+                          <form action="mailto:me@adarshreddyash.me" method="post" enctype="text/plain">
+                            <input type="text" placeholder="name" class="form__field pb5"><br>
+                            <input type="text" placeholder="mail" class="form__field pb5"><br>
+                            <input type="text" placeholder="Message" size="50" class="form__field" style="height: 100px!important"><br><br>
+                            <input type="submit" class="pure-material-button-contained" style="background-color: blue" value="Send">
+                            <input type="reset" class="pure-material-button-contained bg-dark" value="Reset">
+                            </form>
                         </div>
-
-                        <div class="tag">
-                            <i class="fab fa-css3 fa-2x icon-hol text-red"></i>
-                            <div class="text-red icon-hol-des">Css</div>
-                            </button>
-                        </div>
-
-                        <div class="tag">
-                            <img class="icon-hol" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/957px-Tensorflow_logo.svg.png">
-                            <div class="text-orange icon-hol-des">Tensorflow</div>
-                            </button>
-                        </div>
-
-                        <div class="tag">
-                            <img class="icon-hol bg-white" src="images/365630.png">
-                            <div class="text-red icon-hol-des">Scikit learn</div>
-                            </button>
-                        </div>
-
-                        <div class="tag">
-                            <i class="fab fa-android fa-2x icon-hol text-green"></i>
-                            <div class="icon-hol-des text-green">Android</div>
-                            </button>
-                        </div>
-
-                        <div class="tag">
-                            <i class="fab fa-react fa-2x icon-hol text-black"></i>
-                            <div class="text-black icon-hol-des">React Native</div>
-                            </button>
-                        </div>
-
-                        <div class="tag">
-                            <i class="fab fa-docker fa-2x icon-hol text-blue"></i>
-                            <div class="text-blue icon-hol-des">&nbsp Docker</div>
-                            </button>
-                        </div>
-
-                        <div class="tag">
-                            <i class="mdi mdi-kubernetes mdi-24px icon-hol text-blue"></i>
-                            <div class="text-blue icon-hol-des">&nbsp Kubernetes</div>
-                            </button>
-                        </div>
-                        <div class="tag">
-                            <i class="mdi mdi-aws mdi-24px icon-hol text-warning"></i>
-                            <div class="text-warning icon-hol-des">&nbsp aws</div>
-                            </button>
-                        </div>
-                        <div class="tag">
-                            <i class="mdi mdi-google-cloud mdi-24px icon-hol text-red"></i>
-                            <div class="text-red icon-hol-des">&nbsp Google Cloud</div>
-                            </button>
-                        </div>
-                        <div class="tag">
-                            <i class="mdi mdi-google-assistant mdi-24px icon-hol text-green"></i>
-                            <div class="text-green icon-hol-des">&nbsp Actions on Google</div>
-                            </button>
-                        </div>
-                        <div class="tag">
-                            <i class="mdi mdi-vuejs mdi-24px icon-hol text-green"></i>
-                            <div class="text-green icon-hol-des">&nbsp Vuejs</div>
-                            </button>
-                        </div>
-                        <div class="tag">
-                            <i class="mdi mdi-material-design mdi-24px icon-hol" style="color:#999;"></i>
-                            <div class="text-green icon-hol-des" style="color:#999;">&nbsp Material Design</div>
-                            </button>
-                        </div>
-                        <div class="tag">
-                            <i class="mdi mdi-firebase mdi-24px icon-hol text-warning"></i>
-                            <div class="text-warning icon-hol-des">&nbsp Firebase</div>
-                            </button>
-                        </div>
-
-                    </section>
-                    <section>
-                        <h2>Timeline</h2>
-                        <ul id="Newsfeed"></ul>
-                    </section>
-                    <section>
-                        <h2>Blog Posts</h2>
-                        <div id="projectsdiv">
-                            <ul class="projects-ul"></ul>
-                        </div>
-
-                    </section>
-                    <section>
-                        <h2>Returns</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus eaque quidem incidunt.
-                    </section>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <!-- end of tabs  -->
+          </div>
+         
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="footerp" style="margin-bottom:-40px;">
-        <p style="margin-bottom:0!important;">Made with love for Devs</p>
-    </div>
-
-</body>
+        
+    <h4 style="color: black; text-align: center">Made with love</h4>
+      
+      </body>
 <script>
     if ('serviceWorker' in navigator) {
         console.log("Will the service worker register?");
